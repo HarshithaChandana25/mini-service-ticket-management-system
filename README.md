@@ -129,10 +129,14 @@ Install the following before running the project:
 
 ## 1. Clone the Repository
 
-Clone the GitHub repository:
+Open the project repository:
+
+[**GitHub Repository**](https://github.com/HarshithaChandana25/mini-service-ticket-management-system)
+
+Then clone it using the command below:
 
 ```bash
-git clone [GitHub Repository](https://github.com/HarshithaChandana25/mini-service-ticket-management-system).git
+git clone https://github.com/HarshithaChandana25/mini-service-ticket-management-system.git
 ```
 
 Then open the project folder:
@@ -199,17 +203,13 @@ From the `backend` folder, run:
 node server.js
 ```
 
-The backend runs on:
-
-```text
-[http://localhost:5000](http://localhost:5000)
-```
+The backend runs on: [http://localhost:5000](http://localhost:5000)
 
 A successful connection should display messages similar to:
 
 ```text
 MongoDB connected successfully
-Server running on [http://localhost:5000](http://localhost:5000)
+Server running on http://localhost:5000
 ```
 
 ---
@@ -240,11 +240,7 @@ From the `client` folder, run:
 npm run dev
 ```
 
-Vite will display the local development URL, normally:
-
-```text
-[http://localhost:5173](http://localhost:5173)
-```
+Vite will display the local development URL, normally: [http://localhost:5173](http://localhost:5173)
 
 Open the displayed URL in Google Chrome.
 
@@ -254,11 +250,7 @@ Open the displayed URL in Google Chrome.
 
 # REST API
 
-Base URL:
-
-```text
-[http://localhost:5000/api/tickets](http://localhost:5000/api/tickets)
-```
+Base URL: [http://localhost:5000/api/tickets](http://localhost:5000/api/tickets)
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -418,7 +410,6 @@ Displays support contact information and working hours.
 
 **Email:** [harshithachandana25@gmail.com](mailto:harshithachandana25@gmail.com)  
 **Phone:** +91 6364257717  
-**Working Hours:** Monday – Friday, 9:00 AM – 6:00 PM
 
 ---
 
