@@ -1,86 +1,48 @@
-MINI SERVICE TICKET MANAGEMENT SYSTEM
+# Mini Service Ticket Management System
 
-Project Overview
+A full-stack web application for creating, managing, tracking, and resolving customer service tickets through a centralized ticket management system.
 
-The Mini Service Ticket Management System is a web-based application developed to simplify and organize the management of customer service requests.
+The system uses a React frontend, a Node.js and Express.js REST API, and MongoDB Atlas for persistent data storage.
 
-The system provides a centralized platform where service tickets can be created, viewed, searched, filtered, updated, and managed efficiently. It is designed with a clean and user-friendly interface to make ticket management simple and effective.
+---
 
-Technologies Used
+## Project Overview
 
-Frontend:
-- React.js
-- Vite
-- JavaScript
-- HTML
-- CSS
+The Mini Service Ticket Management System helps support teams efficiently manage customer service requests.
 
-Backend:
-- Node.js
-- Express.js
+Users can create tickets, view ticket details, search and filter tickets, update ticket status and priority, add comments, and track ticket activity.
 
-Database:
-- MongoDB
-- Mongoose
-- MongoDB Atlas
+---
 
-Development Tools:
-- Visual Studio Code
-- Git
-- GitHub
+## Key Features
 
+- Create, view, update, and delete service tickets
+- Search tickets by title or customer name
+- Filter tickets by status, priority, and customer
+- View complete ticket details
+- Update ticket status
+- Add comments to tickets
+- Track ticket activity
+- Form validation and API error handling
+- Responsive and professional user interface
 
-Key Features
+### Ticket Status
 
-1. Ticket Dashboard
-   Provides an overview of all service tickets and displays important ticket information in an organized manner.
+- Open
+- In Progress
+- Resolved
+- Closed
 
-2. Create Ticket
-   Allows users to create a new service ticket by entering customer details, ticket title, description, category, and priority.
+### Priority
 
-3. View Ticket Details
-   Users can open a ticket to view its complete details.
+- Low
+- Medium
+- High
 
-4. Update Ticket
-   Existing ticket information can be updated whenever required.
+### Ticket Information
 
-5. Ticket Status Management
-   Tickets can be moved through the following statuses:
-   - Open
-   - In Progress
-   - Resolved
-   - Closed
+Each ticket contains:
 
-6. Priority Management
-   Tickets can be categorized according to their priority:
-   - Low
-   - Medium
-   - High
-
-7. Search
-   Users can search for tickets using the ticket title or customer name.
-
-8. Filtering
-   Tickets can be filtered based on their status and priority.
-
-9. Ticket Dates
-   The system displays the ticket creation date and last updated date.
-
-10. Delete Ticket
-    Users can remove tickets when they are no longer required.
-
-11. Validation and Error Handling
-    The system validates required information and provides suitable error responses for invalid requests.
-
-12. Support Information
-    The application includes Need Help and Support Team sections to provide assistance information.
-
-
-Ticket Information
-
-Each service ticket contains:
-
-- Ticket ID
 - Customer Name
 - Title
 - Description
@@ -89,143 +51,425 @@ Each service ticket contains:
 - Status
 - Created Date
 - Last Updated Date
+- Comments
+- Activity History
 
+---
 
-REST API
+## Technologies Used
 
-GET /api/tickets
-Retrieves all service tickets.
+### Frontend
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
 
-GET /api/tickets/:id
-Retrieves a specific ticket using its ID.
+### Backend
+- Node.js
+- Express.js
+- REST API
+- CORS
+- dotenv
 
-POST /api/tickets
-Creates a new service ticket.
+### Database
+- MongoDB
+- Mongoose
+- MongoDB Atlas
 
-PUT /api/tickets/:id
-Updates an existing ticket.
+### Tools
+- Visual Studio Code
+- Git
+- GitHub
+- Google Chrome
 
-DELETE /api/tickets/:id
-Deletes a service ticket.
+---
 
+## Project Structure
 
-Project Structure
-
+```text
 mini ticket system
-|
-|-- backend
-|   |-- models
-|   |   |-- Ticket.js
-|   |-- routes
-|   |   |-- ticketRoutes.js
-|   |-- server.js
-|   |-- .env
-|   |-- package.json
-|
-|-- client
-|   |-- src
-|   |   |-- App.jsx
-|   |   |-- App.css
-|   |   |-- main.jsx
-|   |-- package.json
-|
-|-- README.txt
+│
+├── backend
+│   ├── models
+│   │   └── Ticket.js
+│   ├── routes
+│   │   └── ticketRoutes.js
+│   ├── .env.example
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── client
+│   ├── src
+│   ├── public
+│   ├── package.json
+│   └── ...
+│
+├── .gitignore
+└── README.md
+```
 
+> **Note:** The actual `.env` file and `node_modules` folders are not included in the GitHub repository or submission ZIP. The `.env` file contains sensitive database connection information.
 
-Database
+---
 
-MongoDB Atlas is used to store and manage service ticket information.
+# Getting Started
 
-Mongoose is used in the backend to define the ticket structure and communicate with the MongoDB database.
+## Prerequisites
 
+Install the following before running the project:
 
-Installation and Setup
+- Node.js and npm
+- MongoDB Atlas account
+- Git
+- Visual Studio Code
 
-1. Open the project folder in Visual Studio Code.
+---
 
-2. Install backend dependencies:
+## 1. Clone the Repository
 
+Clone the GitHub repository:
+
+```bash
+git clone [GitHub Repository](https://github.com/HarshithaChandana25/mini-service-ticket-management-system).git
+```
+
+Then open the project folder:
+
+```bash
+cd mini-service-ticket-management-system
+```
+
+---
+
+# Backend Setup
+
+## 2. Install Backend Dependencies
+
+The `backend` folder is already included in the project.
+
+Open a terminal and navigate to it:
+
+```bash
+cd backend
+```
+
+Install the required dependencies:
+
+```bash
 npm install
+```
 
-3. Configure the MongoDB connection in the backend .env file:
+---
 
+## 3. Configure MongoDB
+
+The project uses MongoDB Atlas.
+
+Inside the existing `backend` folder, create a file named:
+
+```text
+.env
+```
+
+Use the provided `.env.example` file as the reference.
+
+Add:
+
+```env
 MONGO_URI=your_mongodb_connection_string
+```
 
-4. Start the backend server:
+Replace the value with your MongoDB Atlas connection string.
 
+### Security
+
+Do not upload the actual `.env` file to GitHub.
+
+The repository contains `.env.example` only as a safe configuration template. The actual `.env` file is excluded through `.gitignore`.
+
+---
+
+## 4. Start the Backend
+
+From the `backend` folder, run:
+
+```bash
 node server.js
+```
 
 The backend runs on:
 
-http://localhost:5000
+```text
+[http://localhost:5000](http://localhost:5000)
+```
 
-5. Open another terminal and move to the client folder:
+A successful connection should display messages similar to:
 
+```text
+MongoDB connected successfully
+Server running on [http://localhost:5000](http://localhost:5000)
+```
+
+---
+
+# Frontend Setup
+
+## 5. Install Frontend Dependencies
+
+Open a new terminal and navigate to the existing `client` folder:
+
+```bash
 cd client
+```
 
-6. Install frontend dependencies:
+Install the required dependencies:
 
+```bash
 npm install
+```
 
-7. Start the frontend application:
+---
 
+## 6. Start the Frontend
+
+From the `client` folder, run:
+
+```bash
 npm run dev
+```
 
-The frontend normally runs on:
+Vite will display the local development URL, normally:
 
-http://localhost:5173
+```text
+[http://localhost:5173](http://localhost:5173)
+```
 
+Open the displayed URL in Google Chrome.
 
-Validation and Error Handling
+> **Important:** Start the backend before using the frontend so that the application can communicate with the REST API and MongoDB.
 
-The application validates required ticket information before creating or updating tickets.
+---
 
-The backend handles:
+# REST API
+
+Base URL:
+
+```text
+[http://localhost:5000/api/tickets](http://localhost:5000/api/tickets)
+```
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/tickets` | Get all tickets |
+| GET | `/api/tickets/:id` | Get a specific ticket |
+| POST | `/api/tickets` | Create a new ticket |
+| PUT | `/api/tickets/:id` | Update a ticket |
+| DELETE | `/api/tickets/:id` | Delete a ticket |
+| POST | `/api/tickets/:id/comments` | Add a comment |
+
+---
+
+## Search and Filtering
+
+### Filter by Status
+
+```text
+GET /api/tickets?status=Open
+```
+
+### Filter by Priority
+
+```text
+GET /api/tickets?priority=High
+```
+
+### Search by Title or Customer
+
+```text
+GET /api/tickets?search=login
+```
+
+### Filter by Customer
+
+```text
+GET /api/tickets?customer=Rahul
+```
+
+---
+
+# Ticket Creation
+
+Example request:
+
+```json
+{
+  "customerName": "Rahul Sharma",
+  "title": "Unable to login",
+  "description": "Customer is unable to access the account.",
+  "category": "Technical",
+  "priority": "High"
+}
+```
+
+The ticket status defaults to `Open`.
+
+Created and updated timestamps are automatically maintained using Mongoose timestamps.
+
+---
+
+# Database
+
+The application uses:
+
+**MongoDB Atlas**
+
+Database:
+
+```text
+mini_ticket_system
+```
+
+Mongoose is used for schema definition and database operations.
+
+The database stores:
+
+- Customer information
+- Ticket details
+- Category
+- Priority
+- Status
+- Comments
+- Activity history
+- Created timestamp
+- Updated timestamp
+
+---
+
+# Validation and Error Handling
+
+The backend validates requests before performing database operations.
+
+The system handles:
 
 - Missing required fields
-- Invalid ticket IDs
-- Tickets that do not exist
+- Empty input values
 - Invalid priority values
 - Invalid status values
-- Database errors
+- Invalid category values
+- Invalid ticket IDs
+- Tickets that do not exist
+- Invalid API requests
 
-Appropriate HTTP status codes are returned based on the result of each request.
+The API uses appropriate HTTP status codes, including:
 
+```text
+200 OK
+201 Created
+400 Bad Request
+404 Not Found
+500 Internal Server Error
+```
 
-User Interface
+---
 
-The application provides a clean and professional service ticket management interface.
+# Application Workflow
 
-The interface includes:
+```text
+User
+  ↓
+React Frontend
+  ↓
+Express REST API
+  ↓
+Mongoose
+  ↓
+MongoDB Atlas
+```
 
-- Service Ticket System navigation
-- Dashboard
-- Ticket statistics
-- Search and filter options
-- Ticket cards
-- Ticket details
-- Create Ticket form
-- Need Help section
-- Support Team information
+The frontend sends requests to the Express REST API. The backend validates the request and performs the required CRUD operation in MongoDB.
 
+---
 
-Future Enhancements
+# Main Application Sections
 
-The system can be further improved by adding:
+### Dashboard
+Provides an overview of ticket information and statistics.
 
-- User authentication
-- Role-based access
-- Ticket assignment
-- Email notifications
-- Pagination
-- Advanced reporting
-- Automated testing
-- Docker deployment
+### All Tickets
+Displays service tickets with search and filtering options.
 
+### Create Ticket
+Allows users to create a new service ticket.
 
-Conclusion
+### Ticket Details
+Displays complete information about a selected ticket.
 
-The Mini Service Ticket Management System provides a simple, organized, and efficient way to manage customer service requests.
+### Need Help
+Provides guidance for using the system.
 
-By combining a React frontend, Node.js and Express backend, and MongoDB database, the system provides a complete solution for creating and managing service tickets through a modern web application.
+### Support Team
+Displays support contact information and working hours.
 
+---
+
+# Support
+
+**Email:** [harshithachandana25@gmail.com](mailto:harshithachandana25@gmail.com)  
+**Phone:** +91 6364257717  
+**Working Hours:** Monday – Friday, 9:00 AM – 6:00 PM
+
+---
+
+# Security Note
+
+Sensitive configuration values such as MongoDB credentials must not be committed to GitHub.
+
+The actual `.env` file is excluded from the repository.
+
+Use:
+
+```text
+backend/.env.example
+```
+
+as the configuration template.
+
+---
+
+# Submission Contents
+
+The project submission includes:
+
+- React frontend
+- Node.js/Express backend
+- MongoDB/Mongoose integration
+- REST API
+- CRUD operations
+- Validation and error handling
+- Project documentation
+- `.env.example`
+- `.gitignore`
+- README.md
+
+The actual `.env` file and `node_modules` folders are intentionally excluded.
+
+---
+
+# GitHub Repository
+
+[GitHub Repository](https://github.com/HarshithaChandana25/mini-service-ticket-management-system)
+
+---
+
+# Author
+
+**Harshitha Chandana**  
+Artificial Intelligence & Machine Learning
+
+---
+
+## Project Status
+
+**Completed – Academic Project**
